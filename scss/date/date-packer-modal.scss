@@ -1,0 +1,14 @@
+
+@import "../mixins";
+@import "../modal";
+//引入控件样式基类
+@import "../morphpacker/_morph.packer";
+@import "../morphpacker/_morph.packer-theme";
+
+@import "date.base";//时间选择器基类
+
+.date-footer.bar{
+	.button{
+		width: 48%;
+	}
+}

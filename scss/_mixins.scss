@@ -1,0 +1,123 @@
+
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box: $values;
+	-webkit-box-flex: $values;
+	-webkit-flex:  $values;
+	-moz-box-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;  
+	-moz-box-ordinal-group: $val;     
+	-ms-flex-order: $val;     
+	-webkit-order: $val;  
+	order: $val;
+}
+@mixin align($val) {
+	-webkit-box-align: $val;
+	-ms-flex-align: $val;
+	-webkit-align-items: $val;
+	-moz-align-items: $val;
+	align-items: $val;
+	justify-content:$val;
+	-webkit-justify-content:$val;
+}
+ /*水平居中*/
+@mixin align_h($val) {
+  /*老版本语法*/
+  -webkit-box-pack: $val; 
+  -moz-box-pack: $val; 
+  /*混合版本语法*/
+  -ms-flex-pack: $val; 
+  /*新版本语法*/
+  -webkit-justify-content: $val;
+  justify-content: $val;
+}
+/*垂直居中*/
+@mixin align_v($val) {
+  /*老版本语法*/
+  -webkit-box-align: $val; 
+  -moz-box-align: $val;
+  /*混合版本语法*/
+  -ms-flex-align: $val; 
+  /*新版本语法*/
+  -webkit-align-items: $val;
+  align-items: $val;
+}
+//-----------------------------------------------
+@mixin filter-gradient($start-color, $end-color, $orientation: vertical) {
+  $gradient-type: if($orientation == vertical, 0, 1);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
+}
+
+@mixin headings($from: 1, $to: 6){
+  @for $i from $from through $to{
+    h#{$i}{
+      @content
+    }
+  }
+}
+
+@mixin transition($transitions...)
+{
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  -o-transition: $transitions;
+  transition: $transitions;
+}
+
+// Placeholder shadow DOM
+@mixin placeholder
+{
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin box-shadow($val)
+{
+  -webkit-box-shadow: $val;
+  -moz-box-shadow: $val;
+  box-shadow: $val;
+}
+
+@mixin opacity($opacity)
+{
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+
+@mixin text-ellipsis(){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

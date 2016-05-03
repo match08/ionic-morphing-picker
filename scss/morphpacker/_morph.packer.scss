@@ -1,0 +1,58 @@
+morph-packer{
+  display: block;
+}
+.morph-carousel-container {
+  position: relative;
+  min-width: 60px;
+  min-height: 128px;
+  height: 100%;
+}
+.morph-carousel-stage {
+  width: 60px;
+  min-height: 128px;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.morph-carousel__shadow {
+  left: 0;
+  right: 0;
+  top: -4px;
+  bottom: -4px;
+  position: absolute;
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.5) 15%,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(255, 255, 255, 0.5) 85%,
+    rgba(255, 255, 255, 0.8) 100%);
+}
+.morph-carousel {
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.morph-carousel__item {
+  position: absolute;
+  text-align: center;
+  font-size: 22px;
+  padding: 0;
+  width: 60px;
+  height:50px;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}

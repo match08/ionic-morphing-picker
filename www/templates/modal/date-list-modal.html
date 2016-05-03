@@ -1,0 +1,32 @@
+<!-- 日期选择列表 -->
+<ion-modal-view class="date-packer-modal">
+    <ion-header-bar align-title="left" class="bar-energized">
+        <h1 class="title">时间</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="date-packer">
+            <div class="hh">
+                <div class="list">
+                    <morph-packer
+                    data-items="dateItemsHH"
+                    on-selected="data.selectedItemHH"
+                    identifier="modal-carouselHH"
+                    show-value="value"></morph-packer>
+                </div>
+            </div>
+            <div class="ss">
+                <div class="list">
+                    <morph-packer
+                    data-items="dateItemsMM"
+                    on-selected="data.selectedItemMM"
+                    identifier="modal-carouselMM"
+                    show-value="value"></morph-packer>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-light date-footer">
+        <button class="button button-stable" ng-click="closeDatePackerModal(true)">取消</button>
+        <button class="button button-assertive" ng-click="closeDatePackerModal(false)">确认</button>
+    </ion-footer-bar>
+</ion-modal-view>

@@ -1,0 +1,62 @@
+.date-packer-modal.modal {
+	  display: block;
+	  position: absolute;
+	  top: 25%;
+	  bottom: 25%;
+	  left: 10%;
+	  z-index: 10;
+	  overflow:visible;
+	  width: 80%;
+	  height: 50%;
+	  min-height: 280px;
+	  max-height: 280px;
+	  max-width: 420px;
+	  background-color: #fff;
+ }
+@media (min-width: 320px) {
+	.date-packer-modal.modal.modal {
+	 	top:20%;
+	 }
+}
+@media (min-width: 680px) {
+	.date-packer-modal.modal{
+	 	left:20%;
+	 	top:25%;
+	 }
+}
+
+.date-packer-modal.modal .scroll-content{
+	overflow:visible;
+	padding-top:10%;
+}
+.date-packer{
+	@include flexbox();
+	@include align(center);
+	padding:10px 20%;
+
+}
+.date-packer .hh{
+	@include flexbox();
+	@include align(center);
+	@include flex(1);
+	width:50%;
+	min-width:50px;
+	background-color: transparent;
+}
+.date-packer .ss{
+	@include flexbox();
+	@include align(center);
+	@include flex(1);
+	width:50%;
+	min-width:50px;
+	background-color: transparent;
+}
+ .date-packer .list{
+ 	height: 100%;
+ 	min-height: 128px;
+ 	overflow: hidden;
+ 	background-color: transparent;
+ 	.item{
+ 		background-color: transparent;
+ 	}
+ }
